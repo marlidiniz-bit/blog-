@@ -11,7 +11,7 @@ exports.criarUsuario = async (reg,res) =>{
     const hashSenha = await bcrypt.hash(senha,8)
     //Aplicativo do prisma
     const usuario = await prisma.usuario.create({data: {email,senha:hashSenha}})
-    res.status(201).json(id: usuario.id, email: usuario.email)
+    res.status(201).json({id: usuario.id, email: usuario.email})
 }
 
 exports.login = async (req,res)=>{
