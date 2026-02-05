@@ -11,7 +11,7 @@ const [senha, setsenha] = useState("")
 const router = useRouter()
 
 
-const Cadastrar = async(e)=>{
+const Cadastrar = async(e:any)=>{
     e.prevenDefault()
 
     const res = await fetch("http://localhost:3000/usuarios",{
